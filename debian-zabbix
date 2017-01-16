@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Добавление репозитория Zabbix/Debian
+
+VERSION=${1:-3.2}
+OS=${2:-jessie}
+
+wget http://repo.zabbix.com/zabbix/${VERSION}/debian/pool/main/z/zabbix-release/zabbix-release_${VERSION}-1+${OS}_all.deb
+dpkg -i zabbix-release_${VERSION}-1+${OS}_all.deb
+apt-get update
+
